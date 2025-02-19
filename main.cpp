@@ -10,6 +10,6 @@ using namespace std;
 int main()
 {
     Pizza_Store pizzaStore;
-    pizzaStore.OrderPizza();
+    pizzaStore.OrderPizza("Greek");
     return 0;
 }

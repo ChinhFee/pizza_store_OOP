@@ -17,11 +17,14 @@ class Pizza //Abstract class
     public:
         virtual void Prepare(){
             cout << "Preparing " << name << endl;
+            cout << "Requirements: " << endl;
+            cout << "   - Dough: " << dough << endl;
+            cout << "   - Sauce: " << sauce << endl;
             cout << "Tossing dough..." << endl;
             cout << "Adding sauce..." << endl;
             cout << "Adding toppings: " << endl;
             for (size_t i = 0; i < topping.size(); ++i) {
-                cout << "   " << topping[i] << endl;
+                cout << "   -" << topping[i] << endl;
             }
         }
 
