@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
 #include <string>
 
 #include "Pizza_Cheese.h"
@@ -10,25 +9,46 @@
 
 using namespace std;
 
+enum Pizza_Type {
+    Cheese = 1,
+    Greek,
+    Pepperoni
+};
+
 class Pizza_Store
 {
     public:
-        void OrderPizza(string type)
+        void OrderPizza(Pizza_Type type)
         {
-            Pizza pizza;
+            Pizza *pizza = nullptr;
 
-            if (type == "Cheese") Pizza_Cheese pizza;
-            else if (type == "Greek") Pizza_Greek pizza;
-            else if (type == "Pepperoni") Pizza_Pepperoni pizza;
-            else {
-                cout << "The " << type << " pizza is unavailable in our store" << endl;
-                return;
+            switch (type)
+            {
+            case Cheese:
+                pizza = new Pizza_Cheese();
+                break;
+            case Greek:
+                pizza = new Pizza_Greek();
+                break;
+            case Pepperoni:
+                pizza = new Pizza_Pepperoni();
+                break;
+            default:
+                cout << "The type of pizza is unavailable in our store" << endl;
+                break;
             }
 
-            pizza.Prepare();
-            pizza.Bake();
-            pizza.Cut();
-            pizza.Box();
+            if (pizza == nullptr)
+            {
+                return;
+            }
+            
+            pizza->Prepare();
+            pizza->Bake();
+            pizza->Cut();
+            pizza->Box();
+
+            delete pizza;
         }
         
 };

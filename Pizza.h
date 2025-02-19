@@ -16,27 +16,27 @@ class Pizza //Abstract class
 
     public:
         virtual void Prepare(){
-            cout << "Preparing " << name << endl;
-            cout << "Requirements: " << endl;
-            cout << "   - Dough: " << dough << endl;
-            cout << "   - Sauce: " << sauce << endl;
-            cout << "Tossing dough..." << endl;
-            cout << "Adding sauce..." << endl;
-            cout << "Adding toppings: " << endl;
+            cout << "+ Preparing " << name << endl;
+            cout << "+ Requirements: " << endl;
+            cout << "    - Dough: " << dough << endl;
+            cout << "    - Sauce: " << sauce << endl;
+            cout << "+ Tossing dough..." << endl;
+            cout << "+ Adding sauce..." << endl;
+            cout << "+ Adding toppings: " << endl;
             for (size_t i = 0; i < topping.size(); ++i) {
-                cout << "   -" << topping[i] << endl;
+                cout << "    - " << topping[i] << endl;
             }
         }
 
         virtual void Bake(){
-            cout << "Bake for 25 minutes at 250*C" << endl;
+            cout << "+ Bake for 25 minutes at 250*C" << endl;
         }
 
         virtual void Cut(){
-            cout << "Cutting the pizza into diagonal slices" << endl;
+            cout << "+ Cutting the pizza into diagonal slices" << endl;
         }
 
         virtual void Box(){
-            cout << "Place pizza in official PizzaStore box" << endl;
+            cout << "+ Place pizza in official PizzaStore box" << endl;
         }
 };
