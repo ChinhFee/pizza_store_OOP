@@ -12,6 +12,7 @@ class Pizza //Abstract class
         string name;
         string dough;
         string sauce;
+        int temp;
         vector<string> topping;
 
     public:
@@ -29,7 +30,7 @@ class Pizza //Abstract class
         }
 
         virtual void Bake(){
-            cout << "+ Bake for 25 minutes at 250*C" << endl;
+            cout << "+ Bake at 280*C for 30 minutes" << endl; 
         }
 
         virtual void Cut(){
